@@ -58,5 +58,7 @@ pub fn sysroot(verbose: bool) -> Result<PathBuf> {
         stdout.pop();
     }
 
+    stdout = stdout.replacen("-apple-darwin", "-unknown-linux-gnu", 1);
+
     Ok(PathBuf::from(stdout))
 }
